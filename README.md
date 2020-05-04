@@ -52,7 +52,7 @@ If requested with an existing user, 403 will be returned.
 ### UpdateUser
 
 Update user.    
-If request with an unregistered user, 404 will be returned.
+If request with an unregistered user, 403 will be returned.
 
 #### Request
 
@@ -66,5 +66,5 @@ If request with an unregistered user, 404 will be returned.
 
 - 200: `User` domain entity, JSON
 - 400: Boom
-- 404: Boom
+- 403: Boom
 - 500: Boom
