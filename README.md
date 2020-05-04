@@ -1,8 +1,70 @@
-# Template
-A template repository for Node.js app.
+# UIP
 
-## Quick start
+**User Identity Provider**
 
-Select `Use this template` at the menu bar.
+> This project is part of [Univ UC](https://github.com/univuc).
 
-Replace every occurrences of `UIP` and `{description}` to your project's name and description.
+## Features
+
+### Create, read, and update user
+
+UIP is a central source of user identification, including password and slack id.
+
+## API
+
+### GetUser
+
+Find user by userId or slackUserId.
+
+#### Request
+
+`GET` `/users/{id}`
+
+- id: Student number or slack user id
+
+#### Response
+
+- 200: `User` domain entity, JSON
+- 400: Boom
+- 404: Boom
+- 500: Boom
+
+### AddUser
+
+Add new user.    
+If requested with an existing user, 403 will be returned.
+
+#### Request
+
+`POST` `/add-user` `application/json`
+
+- id: Student number 
+- password: Univ LMS password
+- slackUserId: Slack id
+
+#### Response
+
+- 200: `User` domain entity, JSON
+- 400: Boom
+- 403: Boom
+- 500: Boom
+
+### UpdateUser
+
+Update user.    
+If request with an unregistered user, 404 will be returned.
+
+#### Request
+
+`POST` `/update-user` `application/json`
+
+- id: Student number 
+- password: Univ LMS password
+- slackUserId: Slack id
+
+#### Response
+
+- 200: `User` domain entity, JSON
+- 400: Boom
+- 404: Boom
+- 500: Boom

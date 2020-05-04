@@ -18,7 +18,7 @@
  */
 
 import createInternalServer from './lib/infrastructure/webserver/server';
-import modules from './lib/modules';
+import modules from './lib/di/modules';
 import {init} from 'iab/lib/di/resolve';
 import logger from 'iab/lib/utils/logger';
 
