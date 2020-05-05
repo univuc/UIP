@@ -27,5 +27,9 @@ export default {
     db: {
         uri: 'mongodb://localhost/uip',
     },
+
+    secret: {
+        internal: getEnv('INTERNAL_SECRET'),
+    },
 };
 
